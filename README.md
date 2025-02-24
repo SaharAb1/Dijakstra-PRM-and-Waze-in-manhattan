@@ -1,65 +1,84 @@
-# Manhattan Emergency Routing Simulator
+# 🚀 Manhattan Emergency Route Simulation
 
-## Overview
-This project provides a simulation of emergency routing in Manhattan, New York, using graph-based algorithms and dynamic traffic modeling. It demonstrates the capabilities of Dijkstra's Algorithm, Probabilistic Roadmaps (PRM), and Waze-like dynamic routing, complete with visualizations on detailed maps.
+This project calculates emergency routes in **Manhattan, New York** using **OpenStreetMap (OSM)** and **NetworkX**. It allows users to input custom coordinates or use default locations to find the shortest and alternative paths.
 
-## Features
-- **Shortest Path Routing:** Utilizes Dijkstra's algorithm to calculate the shortest path between two points.
-- **Alternative Routing:** Generates alternative paths using a Probabilistic Roadmap (PRM) approach.
-- **Dynamic Traffic Simulation:** Models traffic updates and recalculates routes dynamically, mimicking real-time navigation tools like Waze.
-- **Customizable Input:** Allows input of coordinates for source and destination.
-- **Visualizations:** Displays detailed maps with route overlays, distances, and optional node visibility.
+## 📌 Features
 
-## Prerequisites
-- Python 3.8+
-- Required Libraries:
-  - `osmnx`
-  - `networkx`
-  - `matplotlib`
-  - `pyproj`
-  - `random`
+- 📍 **Dijkstra's Algorithm** for the shortest path
+- 🔀 **Alternative Routes using PRM (Probabilistic Roadmaps)**
+- 🚦 **Traffic Simulation (Dynamic Routing like Waze)**
+- 🌙 **Dark Mode Route Visualization**
 
-Install dependencies using:
+## 🛠️ Installation
+
+### **1️⃣ Install Dependencies**
+
+Ensure you have Python installed, then run:
+
 ```bash
 pip install osmnx networkx matplotlib pyproj
 ```
 
-## Usage
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-repo-name/manhattan-routing-simulator.git
-   cd manhattan-routing-simulator
-   ```
+### **2️⃣ Run the Script**
 
-2. Run the simulation:
-   ```bash
-   python simulate.py
-   ```
+Run the following command:
 
-3. Provide custom coordinates (optional):
-   Edit the `simulate()` function or follow the updated input mechanism described below.
-
-## Coordinate Input (New Feature)
-The simulation supports custom coordinate input for the source and destination. When prompted, enter the latitude and longitude values for both points.
-
-Example:
-```
-Enter source coordinates (latitude, longitude): 40.823479, -73.936095
-Enter destination coordinates (latitude, longitude): 40.710148, -74.004925
+```bash
+python manhattan.py
 ```
 
-The system will calculate and visualize the routes accordingly.
+You will be prompted to enter coordinates **or** use the default locations.
 
-## Example Output
-The simulation generates visualizations of:
-- **Shortest Path**: Route using Dijkstra's Algorithm.
-- **Alternative Routes**: Multiple paths computed via PRM.
-- **Dynamic Routing**: Adjusted paths accounting for simulated traffic.
+---
 
-## Future Enhancements
-- Real-time traffic data integration.
-- Support for additional cities and road networks.
-- Advanced user interface for input and visualization.
+## 🎨 Dark Mode Plot Fix
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+The route visualization is **forced into dark mode** by:
+
+- Using `plt.style.use("dark_background")`
+- Setting `fig.patch.set_facecolor("black")`
+- Adjusting `ax.set_facecolor("black")`
+
+---
+
+## 📖 How It Works
+
+1️⃣ **User selects start and destination** (via input).
+2️⃣ **Graph data is loaded** from OpenStreetMap (OSM).
+3️⃣ **Routes are computed:**
+
+- **Dijkstra’s Algorithm** (Shortest Path)
+- **Alternative Paths** (PRM-based)
+- **Dynamic Routing** (Simulating traffic delays)
+  4️⃣ **The routes are plotted** with a dark background.
+
+---
+
+## 🚀 Example Output
+
+1️⃣ **Dijkstra's Algorithm Route** (Shortest Path) 🟥
+2️⃣ **Alternative Routes** (PRM-based) 🟨🟧🟣
+3️⃣ **Traffic-Affected Route** (Dynamic) 🔵
+
+---
+
+## 🔧 Troubleshooting
+
+❌ **ModuleNotFoundError:** Run:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 📌 To-Do
+
+- Make for it a gui 
+
+---
+
+## 👨‍💻 Author
+
+Created by **SaharAxsus** 🎯
+
